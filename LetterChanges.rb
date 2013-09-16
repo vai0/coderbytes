@@ -19,5 +19,3 @@ def LetterChanges(str)
 	end
 	result.join
 end
-
-p LetterChanges("coderbyte")
