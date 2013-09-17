@@ -3,7 +3,7 @@ def ThirdGreatest(strArr)
 	strArr.each do |str|
 		lengths << str.length
 	end
-	p values = lengths.sort
+	values = lengths.sort
 	answer_length = values[-3]
 
 	answer = ""
@@ -13,4 +13,9 @@ def ThirdGreatest(strArr)
 	answer
 end
 
-p ThirdGreatest(["coder","byte","code"])
+def ThirdGreatestII(strArr)
+	third_largest_length = strArr.sort_by(&:length)[-3].length
+	strArr.select { |str| str.length == third_largest_length}[-1]
+end
+
+p ThirdGreatestII(["coder","byte","code"])
