@@ -4,6 +4,8 @@ def CountingMinutesI(str)
 
 	minutes = ConvertTime(second_time) - ConvertTime(first_time)
 	minutes += 1440 if minutes < 0 
+
+	minutes
 end
 
 def ConvertTime(str)
@@ -16,8 +18,7 @@ def ConvertTime(str)
 		minutes = str.split(":")[1].to_i if str[0..1] == "12"
 		minutes = str.split(":")[0].to_i*60 + str.split(":")[1].to_i
 	end
-
 	minutes
 end
 
-p CountingMinutesI("1:23am-1:08am")
+p CountingMinutesI("2:00pm-3:00pm")
