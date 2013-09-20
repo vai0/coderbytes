@@ -4,7 +4,8 @@ def VowelCount(str)
 	str.split("").each do |char|
 		vowel_count += 1 if vowels.include?(char)
 	end
+	return nil if vowel_count == 0
 	return vowel_count
 end
 
-p VowelCount("hello")
+p VowelCount("hll")
