@@ -1,3 +1,4 @@
+#theres something wrong with it reading anything after "s"
 def RunLength(str)
 	pocket = []
 	result = []
@@ -25,4 +26,24 @@ def RunLength(str)
 	return final.join
 end
 
-p LetterGroup("aabbcde")
+# this one works fine though
+def RunLengthII(str)
+	str_copy = str.split("")
+	lastChar = str_copy.shift
+	result = ""
+	count = 1
+	str_copy.each do |char|
+		if char != lastChar
+			result << "#{count}#{lastChar}"
+			lastChar = char
+			count = 1
+		else
+			count += 1
+		end
+	end
+
+	result += "#{count}#{str_copy[-1]}"
+	return result
+end
+
+p RunLengthII("aabbcde")
